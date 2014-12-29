@@ -1,0 +1,34 @@
+<!--header-->
+<include file="Common:header"/>
+
+<!--sidebar-->
+<include file="Common:left"/>
+
+<!--main-->
+<div class="templatemo-content-wrapper">
+    <div class="templatemo-content">
+        <ol class="breadcrumb">
+            <li><a href="{:U('Admin/Index/index')}">Home</a></li>
+            <li><a href="{:U('Admin/Category/index')}">Cate info</a></li>
+            <li class="active">Edit Cate</li>
+        </ol>
+        <h1>Edit Category</h1>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form action="{:U('Admin/Category/editCateHandle', array('id' => $name[0]['id']))}" role="form" method="post" id="cateform">
+                    <div class="form-group">
+                        <label for="name">分类名称</label>
+                        <input type="text" class="form-control" name="name" placeholder="{$name[0]['name']}" autocomplete="off">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">修改</button>
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
+
+    </div>
+</div>
+
+<include file="Common:footer"/>

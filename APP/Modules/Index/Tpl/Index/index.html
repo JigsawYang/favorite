@@ -1,0 +1,63 @@
+<include file="Common:header"/>
+
+<!-- Header -->
+<header id="head">
+    <div class="container">
+        <div class="row">
+            <h1 class="lead">SEARCH YOUR FAVORITE WEBSITE</h1>
+
+            <p class="tagline">I Insist On Myself to Do my Best for You</p>
+
+            <p>
+
+            <form id="search-form" action="{:U('Index/Show/keyword')}" method="post">
+                <input id="search-term" type="text" placeholder="Search your favorite" name="keyword">
+                <button type="submit" class="btn btn-default btn-lg" role="button">Search</button>
+            </form>
+            </p>
+        </div>
+    </div>
+</header>
+<!-- /Header -->
+<div class="container">
+    <div class="row">
+        <clist order="sort">
+            <div class="cate-tit">
+                <span class="icon"></span>
+                <h3>{$name}</h3>
+            </div>
+
+            <ul class="nav nav-pills nav-justified addActive" role="tablist">
+                <foreach name="child" item="v">
+                    <li>
+                        <a href="{:U('Index/Index/handle', array('id' => $v['id']))}" role="tab">{$v.name}</a>
+                    </li>
+                </foreach>
+
+            </ul>
+
+        </clist>
+        <hr/>
+        <div class="tab-content" style="margin-top: 80px;"></div>
+    </div>
+</div>
+
+<include file="Common:footer"/>
+<script type="text/javascript">
+    var tabURL = "{:U('Index/Show/index')}";
+    var searchURL = "{:U('Index/Index/search')}";
+</script>
+<script src="__PUBLIC__/js/jquery-1.11.1.js"></script>
+<script src="__PUBLIC__/js/headroom.min.js"></script>
+<script src="__PUBLIC__/js/jQuery.headroom.min.js"></script>
+<script src="__PUBLIC__/js/template.js"></script>
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/jquery.autocomplete.js"></script>
+<script src="__PUBLIC__/js/jquery.validate.min.js"></script>
+<script src="__PUBLIC__/js/validate.js"></script>
+<script src="__PUBLIC__/js/message.js"></script>
+<script src="__PUBLIC__/js/cate.js"></script>
+
+</body>
+</html>

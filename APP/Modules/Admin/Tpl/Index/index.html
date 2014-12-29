@@ -1,0 +1,88 @@
+<!--header-->
+<include file="Common:header" />
+
+<!--sidebar-->
+<include file="Common:left" />
+
+<!--main-->
+            <div class="templatemo-content-wrapper">
+                <div class="templatemo-content">
+                    <ol class="breadcrumb">
+                        <li><a href="#" class="active">Home</a></li>
+
+                    </ol>
+
+                    <div class="margin-bottom-30">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="nav nav-pills">
+                                    <li class="active"><a href="#">收集网站总数 <span class="badge">{$count}</span></a></li>
+                                    <li class="active" id="iweather"><a href="#">选择城市获取天气</a></li>
+
+                                    <select name="weather" id="wcode">
+                                        <option>请选择</option>
+                                        <option value="101010100">北京</option>
+                                        <option value="101020100">上海</option>
+                                        <option value="101280601">深圳</option>
+                                    </select>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="templatemo-progress">
+                                <div class="list-group">
+
+                                    <a href="#" class="list-group-item active">
+                                        <h4 class="list-group-item-heading">Top Hot 3 Web</h4>
+                                        <foreach name="hot" item="v">
+                                        <p class="list-group-item-text">{$v.title}</p>
+                                        </foreach>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="templatemo-panels">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 margin-bottom-30">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">New User Table</div>
+                                    <div class="panel-body">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>User Name</th>
+                                                <th>Email</th>
+                                                <th>Last Login ip</th>
+                                                <th>Last Login time</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <foreach name="user" item="v">
+                                                <tr>
+                                                    <td>{$v.id}</td>
+                                                    <td>{$v.username}</td>
+                                                    <td>{$v.email}</td>
+                                                    <td>{$v.loginip}</td>
+                                                    <td>{$v.logintime|date="Y-m-d", ###}</td>
+                                                </tr>
+                                            </foreach>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <span class="btn btn-primary"><a href="{:U('Admin/User/index')}">See Tables</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<include file="Common:footer" />

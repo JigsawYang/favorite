@@ -1,0 +1,71 @@
+<!--header-->
+<include file="Common:header"/>
+
+<!--sidebar-->
+<include file="Common:left"/>
+
+<!--main-->
+<div class="templatemo-content-wrapper">
+    <div class="templatemo-content">
+        <ol class="breadcrumb">
+            <li><a href="{:U('Admin/Index/index')}">Home</a></li>
+            <li class="active">Admin info</li>
+        </ol>
+        <h1>Manage Admin Users</h1>
+
+        <div class="row margin-bottom-30">
+            <div class="col-md-12">
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="#">管理员总数 <span class="badge">{$count}</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="btn-group pull-right" id="templatemo_sort_btn">
+                    <button type="button" class="btn btn-default">Sort by</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">First Name</a></li>
+                        <li><a href="#">Last Name</a></li>
+                        <li><a href="#">Username</a></li>
+                    </ul>
+                </div>
+
+                <div class="table-responsive">
+                    <h4 class="margin-bottom-15">Admin Users</h4>
+                    <table class="table table-striped table-hover table-bordered">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Username</th>
+                            <th>Last Login IP</th>
+                            <th>Last Login Time</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <foreach name="aduser" item="v">
+                            <tr>
+                                <td>{$v.id}</td>
+                                <td>{$v.username}</td>
+                                <td>{$v.loginip}</td>
+                                <td>{$v.logintime|date="Y-m-d", ###}</td>
+                                <td><a href="{:U('Admin/AdminUser/editUser', array('id' => $v['id']))}" class="btn btn-default btn-primary">Edit</a></td>
+                                <td><a href="{:U('Admin/AdminUser/delete', array('id' => $v['id']))}" class="btn btn-danger">Delete</a></td>
+                            </tr>
+                        </foreach>
+                        </tbody>
+                    </table>
+                </div>
+               {$page}
+            </div>
+        </div>
+    </div>
+</div>
+
+<include file="Common:footer"/>

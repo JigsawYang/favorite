@@ -1,0 +1,54 @@
+<div class="template-page-wrapper">
+    <div class="navbar-collapse collapse templatemo-sidebar">
+        <ul class="templatemo-sidebar-menu">
+            <li>
+                <p class="p-center">欢迎, {$name}</p>
+            </li>
+            <li class="active"><a href="{:U('Admin/Index/index')}"><i class="fa fa-home"></i>首页</a></li>
+            <li class="sub">
+                <a href="javascript:;">
+                    <i class="fa fa-list-ol"></i> 网站管理
+                    <div class="pull-right"><span class="caret"></span></div>
+                </a>
+                <ul class="templatemo-submenu">
+                    <li><a href="{:U('Admin/Webinfo/index')}">网站列表</a></li>
+                    <li><a href="{:U('Admin/Webinfo/addWeb')}">添加新网站</a></li>
+                    <li><a href="{:U('Admin/Webinfo/trash')}">回收站</a></li>
+                </ul>
+            </li>
+            <li><a href="{:U('Admin/Chart/index')}"><i class="fa fa-cubes"></i>点击率图表</a></li>
+            <li class="sub">
+                <a href="javascript:;">
+                    <i class="fa fa-database"></i> 分类管理
+                    <div class="pull-right"><span class="caret"></span></div>
+                </a>
+                <ul class="templatemo-submenu">
+                    <li><a href="{:U('Admin/Category/index')}">分类列表</a></li>
+                    <li><a href="{:U('Admin/Category/addCate')}">添加分类</a></li>
+                </ul>
+            </li>
+            <li class="sub">
+                <a href="javascript:;">
+                    <i class="fa fa-users"></i> 用户管理
+                    <div class="pull-right"><span class="caret"></span></div>
+                </a>
+                <ul class="templatemo-submenu">
+                    <li><a href="{:U('Admin/User/index')}">用户列表</a></li>
+                    <li><a href="{:U('Admin/User/addUser')}">添加用户</a></li>
+                </ul>
+            </li>
+            <li class="sub">
+                <a href="javascript:;">
+                    <i class="fa fa-user"></i> 管理员
+                    <div class="pull-right"><span class="caret"></span></div>
+                </a>
+                <ul class="templatemo-submenu">
+                    <li><a href="{:U('Admin/AdminUser/index')}">管理员列表</a></li>
+                    <li><a href="{:U('Admin/AdminUser/addUser')}">添加管理员</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:;" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i>Sign
+                Out</a></li>
+        </ul>
+    </div>
+    <!--/.navbar-collapse -->

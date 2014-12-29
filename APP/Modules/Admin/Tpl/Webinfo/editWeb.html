@@ -1,0 +1,55 @@
+<!--header-->
+<include file="Common:header"/>
+
+<!--sidebar-->
+<include file="Common:left"/>
+
+<!--main-->
+<div class="templatemo-content-wrapper">
+    <div class="templatemo-content">
+        <ol class="breadcrumb">
+            <li><a href="{:U('Admin/Index/index')}">Home</a></li>
+            <li><a href="{:U('Admin/Webinfo/index')}">Web info</a></li>
+            <li class="active">Edit Web</li>
+        </ol>
+        <h1>Edit Web Info</h1>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form action="{:U('Admin/Webinfo/editWebHandle', array('id' => $web[0]['id']))}" role="form" method="post" id="webform">
+                    <div class="form-group">
+                        <label for="cid">所属分类</label>
+                        <select class="form-control" name="cid">
+                            <option>请选择</option>
+                            <foreach name="cate" item="v">
+                                <option value="{$v.id}">{$v.html}{$v.name}</option>
+                            </foreach>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">网站名字</label>
+                        <input type="text" class="form-control" name="title" placeholder="网站名字" value="{$web[0]['title']}" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">网址</label>
+                        <input type="text" class="form-control" name="address" placeholder="网址" value="{$web[0]['address']}">
+                    </div>
+                    <div class="form-group">
+                        <label for="click">点击次数</label>
+                        <input type="text" class="form-control" name="click" placeholder="点击次数" value="{$web[0]['click']}">
+                    </div>
+                    <div class="form-group">
+                        <label for="content">网站介绍</label>
+                        <textarea class="form-control" rows="8" name="content">{$web[0]['content']}</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">修改</button>
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
+
+    </div>
+</div>
+
+<include file="Common:footer"/>

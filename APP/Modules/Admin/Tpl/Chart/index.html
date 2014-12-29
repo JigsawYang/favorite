@@ -1,0 +1,102 @@
+<!--header-->
+<include file="Common:header"/>
+
+<!--sidebar-->
+<include file="Common:left"/>
+
+<div class="templatemo-content-wrapper">
+    <div class="templatemo-content">
+        <ol class="breadcrumb">
+            <li><a href="{:U('Admin/Index/index')}">Home</a></li>
+            <li class="active">Charts</li>
+        </ol>
+        <h1>Data Visualization</h1>
+        <div class="templatemo-charts">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">分类 &amp; 点击率</div>
+                    </div>
+                    <div class="row templatemo-chart-row">
+
+                        <div class="templatemo-chart-box col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <canvas id="pie-cate"></canvas>
+                            <h4>分类排序饼图</h4>
+                            <span class="text-muted">排序</span>
+                        </div>
+
+                        <div class="templatemo-chart-box col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <canvas id="doughnut-cate"></canvas>
+                            <h4>分类排序环</h4>
+                            <span class="text-muted">排序</span>
+                        </div>
+
+                        <div class="templatemo-chart-box col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <canvas id="radar-chart"></canvas>
+                            <h4>雷达图</h4>
+                            <span class="text-muted">排序</span>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">站点-点击量</div>
+                        <canvas id="line-chart"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">站点-点击量</div>
+                        <canvas id="bar-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Are you sure you want to sign out?</h4>
+            </div>
+            <div class="modal-footer">
+                <a href="{:U('Admin/Index/logout')}" class="btn btn-primary">Yes</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="templatemo-footer">
+    <div class="templatemo-copyright">
+        <p>Copyright &copy; 2014 Favorite Website Write by Jigsaw Yang</p>
+    </div>
+</footer>
+</div>
+
+<script src="__PUBLIC__/js/jquery.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/Chart.min.js"></script>
+
+
+<script type="text/javascript">
+    var weatherUrl = "{:U('Admin/Index/getWeather')}";
+    $('#myTab a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    });
+    var web_click = {$web_cate};
+    var big_cate = {$pie};
+
+
+</script>
+<script src="__PUBLIC__/js/templatemo_script.js"></script>
+</body>
+</html>

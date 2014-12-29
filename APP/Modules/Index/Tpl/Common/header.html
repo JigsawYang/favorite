@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Keywords" content="favorite website, 喜爱的网站, 网站导航">
+    <meta name="description" content="喜爱的网站收藏, favorite Website, 网站导航, 网站分类">
+    <meta name="author" content="Jigsaw Yang">
+
+    <title>Favorite Website</title>
+
+    <link rel="shortcut icon" href="__PUBLIC__/images/gt_favicon.png">
+
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/font-awesome.min.css">
+
+    <!-- Custom styles for our template -->
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap-theme.css" media="screen" >
+    <link rel="stylesheet" href="__PUBLIC__/css/main.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/jquery.autocomplete.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="__PUBLIC__/js/html5shiv.js"></script>
+    <script src="__PUBLIC__/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!-- Fixed navbar -->
+<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+    <div class="container">
+        <div class="navbar-header">
+            <!-- Button for smallest screens -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{:U('Index/Index/index')}">
+                <img src="__PUBLIC__/images/logo2.png" alt="logo"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right">
+                <li class="active">
+                    <a href="{:U('Index/Index/index')}">Home</a>
+                </li>
+                <li>
+                    <a href="{:U('Index/About/index')}">About Me</a>
+                </li>
+                <if condition="($name)">
+                    <li>
+                        <a class="btn" href="#">{$name}</a>
+                    </li>
+                    <li>
+                        <a class="btn" href="{:U('Index/Index/logout')}">Logout</a>
+                    </li>
+                <else />
+                    <li>
+                        <a class="btn" href="{:U('Index/Login/index')}">Login</a>
+                    </li>
+                    <li>
+                        <a class="btn" href="{:U('Index/Reg/index')}">Register</a>
+                    </li>
+                </if>
+
+            </ul>
+        </div>
+        <!--/.nav-collapse --> </div>
+</div>
+<!-- /.navbar -->
+
+<header id="head" class="secondary"></header>

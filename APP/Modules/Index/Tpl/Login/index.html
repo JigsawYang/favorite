@@ -1,0 +1,69 @@
+<include file="Common:header" />
+
+<!-- container -->
+<div class="container">
+
+    <ol class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li class="active">User access</li>
+    </ol>
+
+    <div class="row">
+
+        <!-- Article main content -->
+        <article class="col-xs-12 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">Login</h1>
+            </header>
+
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h3 class="thin text-center">Login to your account</h3>
+                        <p class="text-center text-muted">If don't have a account, <a href="{:U('Index/Reg/index')}">Register</a> here than you can enjoy a nice search. </p>
+                        <hr>
+
+                        <form action="{:U('Index/Login/login')}" method="post" id="regform">
+                            <div class="top-margin">
+                                <label>Username<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="username" autocomplete="off">
+                            </div>
+                            <div class="top-margin">
+                                <label>Password <span class="text-danger">*</span></label>
+                                <input type="password" class="form-control" name="password" autocomplete="off">
+                            </div>
+
+                            <div class="row top-margin">
+                                <div class="col-sm-6">
+                                    <label>验证码 <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="code" autocomplete="off">
+                                </div>
+                                <div class="col-sm-6" style="margin-top: 9px;">
+                                    <img src="{:U('Index/Reg/verify')}" alt="vcode" id="code">
+                                    <a href="javascript:void(change_code(this));">看不清</a>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-lg-8">
+                                </div>
+                                <div class="col-lg-4 text-right">
+                                    <button class="btn btn-action" type="submit">Sign in</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </article>
+        <!-- /Article -->
+
+    </div>
+</div>	<!-- /container -->
+
+<include file="Common:footer" />
+<include file="Common:jspage" />
