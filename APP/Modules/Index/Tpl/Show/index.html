@@ -16,9 +16,14 @@
                 <h1 class="page-title">Show Web Info</h1>
             </header>
             <h3>{$info[0]['title']}</h3>
-            <p><img src="__PUBLIC__/images/mac.jpg" alt="" class="img-rounded pull-right" width="300" > {$info[0]['content']}</p>
+            <p><img src="__PUBLIC__/images/mac.jpg" alt="PC" class="img-rounded pull-right" width="300" > {$info[0]['content']}</p>
+            
             <a class="btn btn-action btn-lg" role="button" href="{$info[0]['address']}" target="_blank">点进进入官网</a>
+            <br/>
+            <h4>扫一扫进入网站</h4>
+            <img src="{:U('Index/Show/qrcode', array('adr' => $no_http))}" class="img-rounded pull-left">
         </article>
+
         <!-- /Article -->
 
         <!-- Sidebar -->
